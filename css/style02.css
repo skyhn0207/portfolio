@@ -1,0 +1,377 @@
+:root{
+  --clr: rgb(99, 238, 243);
+}
+body {
+  background: linear-gradient(45deg, #e1ffff 0%,#e1ffff 12%,#bee4f8 19%,#bee4f8 19%,#e6f8fd 30%,#fdffff 43%,#fdffff 43%,#c8eefb 58%,#bee4f8 72%,#bee4f8 72%,#fdffff 88%,#bee4f8 100%);
+  min-height: 100vh;
+  position: relative;
+}
+header {
+  position: fixed;
+}
+.navigation {
+  inset: 20px;
+  width: 120px;
+  background: #fff;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding-top: 10px;
+  box-shadow: 9px 7px 2px rgb(99, 238, 243, 0.2),
+              inset 5px 5px 5px 2px rgb(99, 238, 243, 0.5);
+}
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+  justify-content: center;
+}
+.navigation ul li a .nav_icon {
+  position: relative;
+  display: block;
+  transition: 0.5s;
+}
+.navigation ul li.active a .nav_icon {
+  transform: translateX(60px);
+}
+.navigation ul li a .nav_title {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.5s;
+  /* color: rgba(53, 142, 145, 0.781); */
+  color: #365fa1;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-20px);
+}
+.navigation ul li.active a .nav_title {
+  opacity: 1;
+  transform: translateX(2px);
+}
+.navigation ul li a .nav_icon ion-icon {
+  font-size: 2rem;
+  color: rgba(53, 142, 145, 0.781);  
+}
+
+.indicator {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  top: 30px;
+  right: -30px;
+  border-radius: 50%;
+  border: 8px solid rgba(99, 238, 243, 0.5);
+  transition: 0.3s;
+}
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: -19px;
+  right: 22px;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  border-bottom-right-radius: 20px;
+  /* box-shadow: 10px 0 0 0 rgba(99, 238, 243, 0.2); */
+}
+.indicator::after {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  right: 22px;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  /* box-shadow: 10px 0 0 0 rgba(99, 238, 243, 0.2); */
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+  transform: translateY(calc(100px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator {
+  transform: translateY(calc(100px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator {
+  transform: translateY(calc(100px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator {
+  transform: translateY(calc(100px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator {
+  transform: translateY(calc(100px * 4));
+}
+
+/* 토글버튼 */
+.toggle {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  top: 60%;
+  left: 80px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toggle::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 3px;
+  border-radius: 3px;
+  background: #365fa1;
+  transition: 1s;
+  transform: translateY(0px) rotate(-405deg);
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 3px;
+  border-radius: 3px;
+  background: #365fa1;
+  transition: 1s;
+  transform: translateY(0px) rotate(225deg);
+}
+.toggle.active::before {
+  transform: translateY(-5px);
+}
+.toggle.active::after {
+  transform: translateY(5px);
+}
+
+/* main */
+
+/* /home/ */
+.home {
+  width: 100vw;
+  height: 100vh;
+  background: url("../imges/skypicture.jpg") no-repeat center;
+  background-size: cover;
+}
+/* about */
+
+/* /portfolio */
+/* .portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.portfolio_menu {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.portfolio_menu li {
+  position: absolute;
+  list-style: none;
+  left: -300px;
+  transform-origin: 400px;
+  transition: 0.5s;
+  transition-delay: calc(0.15s * var(--i));
+  transform: rotate(0deg) translateX(350px);
+}
+.portfolio_menu.active li {
+  transform: rotate(calc(360deg / 5 * var(--i)));
+}
+.portfolio_menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 50%;
+  transform: rotate(calc(360deg / -5 * var(--i)));
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.portfolio_menu.active li a {
+  width: 200px;
+  height: 300px;
+  border-radius: 20%;
+  transition: 0.5s;
+  transition-delay: 1s;
+}
+.portfolio_menu li a img {
+  height: 100%;
+}
+.portfolio_menu.active li a:hover {
+  
+}
+.plus {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  font-size: 5em;
+  transition: 1.25s;
+}
+.portfolio_menu.active .plus {
+  transform: rotate(315deg);
+} */
+.portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.portfolio_menu {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.portfolio_menu li {
+  position: absolute;
+  list-style: none;
+  left: -300px;
+  transform-origin: 400px;
+  transition: 0.5s;
+  transition-delay: calc(0.15s * var(--i));
+  transform: rotate(0deg) translateX(350px);
+}
+.portfolio_menu.active li {
+  transform: rotate(calc(360deg / 5 * var(--i)));
+}
+.portfolio_menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background: #060c21;
+  transform: rotate(calc(360deg / -5 * var(--i)));
+  /* border-radius: 50%;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden; */
+  position: absolute;
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.portfolio_menu li a::before{
+  content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: #fff;
+      z-index: -200;
+}
+.portfolio_menu li a::after{
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -300;
+  filter: blur(40px);
+}
+.portfolio_menu.active li a {
+  width: 200px;
+  height: 300px;
+  transition: 0.5s;
+  transition-delay: 1s;
+  position: relative;
+}
+.portfolio_menu li a img {
+  height: 100%;
+}
+
+.plus {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  font-size: 5em;
+  transition: 1.25s;
+}
+.portfolio_menu.active .plus {
+  transform: rotate(315deg);
+} 
+
+
+
+.portfolio_menu li.:nth-last-child(1) a::before,
+.portfolio_menu li.:nth-last-child(1) a::after {
+  background: linear-gradient(235deg,#90ff00,#010615,#00bcd4);
+}
+.portfolio_menu li.:nth-last-child(2) a::before,
+.portfolio_menu li.:nth-last-child(2) a::after {
+  background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+}
+.portfolio_menu li.:nth-last-child(3) a::before,
+.portfolio_menu li.:nth-last-child(3) a::after {
+  background: linear-gradient(235deg,#772aff,#010615,#2196f3);
+}
+.portfolio_menu li.:nth-last-child(4) a::before,
+.portfolio_menu li.:nth-last-child(4) a::after {
+  background: linear-gradient(235deg,#90ff00,#010615,#00bcd4);
+}
+.portfolio_menu li:nth-last-child(5) a::before,
+.portfolio_menu li:nth-last-child(5) a::after {
+  background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+}
+
+.img_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.img_box img {
+  max-width: 100%;
+  opacity: 0.1;
+  transition: 0.5s;
+}
+.portfolio_menu li a:hover .img_box img {
+  opacity: 1;
+  transition: 0.5s;
+}
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky's portfolio</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style02.css">
+</head>
+<body>
+  <header>
+    <nav class="navigation">
+      <ul>
+
+        <li class="list active">
+          <a href="#">
+            <span class="nav_icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="nav_title">Home</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="#">
+            <span class="nav_icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+            <span class="nav_title">About</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="#">
+            <span class="nav_icon"><ion-icon name="document-text-outline"></ion-icon></span>
+            <span class="nav_title">Port<br>folio</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="#">
+            <span class="nav_icon"><ion-icon name="hourglass-outline"></ion-icon></span>
+            <span class="nav_title">Future<br>plans</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="#">
+            <span class="nav_icon"><ion-icon name="call-outline"></ion-icon></span>
+            <span class="nav_title">Contact</span>
+          </a>
+        </li>
+
+        <div class="indicator"></div>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="home">
+      asdas
+    </section>
+    <!-- //home -->
+    
+    <section class="about">
+      
+    </section>
+    <!-- //about -->
+
+    <!-- <section class="portfolio">
+      <div class="portfolio_menu">
+        <button class="plus">
+          <ion-icon name="add-outline"></ion-icon>
+        </button>
+          <li style="--i:0">
+            <a href="#">
+              <img src="imges/다운로드.jpg" alt="">
+            </a>
+          </li>
+
+          <li style="--i:1">
+            <a href="#">
+              <ion-icon name="car-sport-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li style="--i:2">
+            <a href="#">
+              <ion-icon name="diamond-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li style="--i:3">
+            <a href="#">
+              <ion-icon name="golf-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li style="--i:4">
+            <a href="#">
+              <ion-icon name="man-outline"></ion-icon>
+            </a>
+          </li>
+      </div>
+    </section> -->
+    <section class="portfolio" style="background-color: #000;">
+      <div class="portfolio_menu">
+          <button class="plus">
+            <ion-icon name="add-outline"></ion-icon>
+          </button>
+          <li style="--i:0">
+            <a href="#" class="box">
+              <div class="img_box">
+                <img src="imges/구름과-푸른-하늘.jpg" alt="">
+              </div>
+              <div class="text_box">
+                <h2>
+                  Lee Ha Neul<br>
+                  <span>Criative Designer</span>
+                </h2>
+              </div>
+            </a>
+          </li>
+
+          <li style="--i:1">
+            <a href="#">
+              <ion-icon name="car-sport-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li style="--i:2">
+            <a href="#">
+              <ion-icon name="diamond-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li style="--i:3">
+            <a href="#">
+              <ion-icon name="golf-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li style="--i:4">
+            <a href="#">
+              <ion-icon name="man-outline"></ion-icon>
+            </a>
+          </li>
+      </div>
+    </section>
+
+    
+    <!-- //portfolio -->
+  </main>
+  <button class="toggle"></button>
+
+  <!-- script link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- main script -->
+  <script>    
+    const list = document.querySelectorAll('.list');
+
+    function activeLink(){
+      list.forEach((item) => 
+      item.classList.remove('active'));
+      this.classList.add('active');
+    }
+    list.forEach((item) => item.addEventListener('click', activeLink));
+
+    
+    let navigation = document.querySelector('.navigation');
+    let toggle = document.querySelector('.toggle');
+
+    toggle.onclick = function(){
+    this.classList.toggle('active')
+    }
+    
+    $(document).ready(function(){
+      $('.toggle').click(function(){
+        $('.navigation').slideToggle(500);
+      })
+    })
+
+    
+    let plus = document.querySelector('.plus')
+    let portfolio_menu = document.querySelector('.portfolio_menu')
+
+    plus.onclick = function(){
+      portfolio_menu.classList.toggle('active')
+    }
+  </script>
+</body>
+</html>
