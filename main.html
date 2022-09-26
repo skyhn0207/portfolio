@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SKY's portfolio</title>
+  <link rel="icon" href="imges/favicon.PNG">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header id="header">
+  <header>
     <nav class="header_nav">
       <ul>
         <li class="list on" style="--i:0;">
@@ -58,11 +66,12 @@
   <main>
     <section class="home">
       <div class="inner">
-        <h1 data-text="WELCOME TO SKY's PORTFOLIO">WELCOME TO SKY's PORTFOLIO.</h1>
+        <h1 data-text="WELCOME TO SKY's PORTFOLIO.">WELCOME TO SKY's PORTFOLIO.</h1>
         <p>
-          <strong>안녕하십니까! 신입 웹퍼블리셔 "이하늘" 입니다.</strong>
-          <span>저의 포트폴리오를 열람해주셔서 진심으로 감사합니다. :)</span>
-          <span>퍼블리셔를 꿈꾸며 열심히 제작하였습니다.</span>
+          <span>안녕하십니까! 신입 웹 퍼블리셔<strong>"이하늘"</strong>입니다.</span>
+          <span>
+            저는 웹을 좋아하고 이용하는 시간이 많았습니다. 많은 시간을 웹과 함께 보내다 어느 순간 웹을 만들어보고 싶다는 생각을 갖게 되었고 코딩이라는 것을 독학하기 시작했습니다. 혼자 공부를 하면서 많은 문제들을 겪었으며 해결해왔습니다. 아직 많이 부족하지만 계속 발전하며 앞서나가는 퍼블리셔가 되겠습니다.
+          </span>
         </p>
       </div>
     </section>
@@ -75,7 +84,8 @@
           <div class="phone_content">
             <div class="mo_header">
               <button>
-                <img src="imges/인스타그램 로고.PNG" alt="">
+                <!-- <img src="imges/인스타그램 로고.PNG" alt="" style="display: none;"> -->
+                Gallery
               </button>
 
               <div class="util">
@@ -95,7 +105,7 @@
             <!-- //mo_header -->
             
             <section class="my">
-              <article class="profil">
+              <article class="user">
                 <button></button>
                 <span>이하늘</span>
               </article>
@@ -446,49 +456,230 @@
             </section>
           </div>
         </div>
+
+        <div class="introduce">
+          <div class="profile">
+            <span>About me</span>
+            <ul>
+              <li>이름 : 이하늘</li>
+              <li>출생 : 1995.02.07</li>
+              <li>지역 : 경기도 안양</li>
+              <li>학력 : 오산대 경찰행정과 졸업</li>
+            </ul>
+
+            <div class="Character">
+              <ul>
+                <span>자신있습니다.</span>
+                <li>예의, 존중</li>
+                <li>끈기, 노력</li>
+                <li>강한 정신력</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- //about -->
 
     <section class="portfolio">
-      <div class="portfolio_menu">
-        <button class="plus">
-          <ion-icon name="add-outline"></ion-icon>
-        </button>
+      <div class="inner">
+
+        <div class="portfolio_menu">
+          <button class="plus">
+            <ion-icon name="add-outline"></ion-icon>
+          </button>
           <li style="--i:0">
-            <a href="#">
-              <img src="imges/다운로드.jpg" alt="">
-            </a>
+            <div class="container">
+              <div class="card_box card_box01">
+                <div class="card card_01">
+                  <div class="content">
+                    <h2>Udemy</h2>
+                    <a href="#" class="card_btn">click</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
-
+  
           <li style="--i:1">
-            <a href="#">
-              <ion-icon name="car-sport-outline"></ion-icon>
-            </a>
+            <div class="container">
+            <div class="card_box card_box02">
+              <div class="card card_02">
+                <div class="content">
+                  <h2>Ankang</h2>
+                  <a href="#" class="card_btn">click</a>
+                </div>
+              </div>
+            </div>
+          </div>
           </li>
-
+  
           <li style="--i:2">
-            <a href="#">
-              <ion-icon name="diamond-outline"></ion-icon>
-            </a>
+            <div class="container">
+              <div class="card_box card_box03">
+                <div class="card card_03">
+                  <div class="content">
+                    <!-- <img src="imges/dyson.png" alt=""> -->
+                    <h2>dyson</h2>
+                    <a href="#" class="card_btn">click</a>
+                  </div>
+                </div>
+              </div>
+          </div>
           </li>
-
+  
           <li style="--i:3">
-            <a href="#">
-              <ion-icon name="golf-outline"></ion-icon>
-            </a>
+            <div class="container">
+              <div class="card_box card_box04">
+                <div class="card card_04">
+                  <div class="content">
+                    <h2>Pmang</h2>
+                    <a href="#" class="card_btn">click</a>
+                  </div>
+                </div>
+              </div>
+          </div>
           </li>
-
+  
           <li style="--i:4">
-            <a href="#">
-              <ion-icon name="man-outline"></ion-icon>
-            </a>
+            <div class="container">
+              <div class="card_box card_box05">
+                <div class="card card_05">
+                  <div class="content">
+                    <h2 class="test">Uiwang</h2>
+                    <a href="#" class="card_btn">click</a>
+                  </div>
+                </div>
+              </div>
+          </div>
           </li>
+        </div>
+        
+        <div class="mo_portfolio_menu">
+          <div class="swiper mobile">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="mobile_list">
+                  <a href="#">
+                    <figure>
+                      <img src="imges/ankang.jpeg" alt="">
+                      <figcaption>
+                        <h2>Udemy</h2>
+                        <span>
+                          반응형
+                        </span>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="imges/ankang.jpeg" alt="">
+
+              </div>
+              <div class="swiper-slide">
+                <img src="imges/ankang.jpeg" alt="">
+                
+              </div>
+              <div class="swiper-slide">
+                <img src="imges/ankang.jpeg" alt="">
+                
+              </div>
+              <div class="swiper-slide">
+                <img src="imges/ankang.jpeg" alt="">
+                
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
       </div>
     </section>
     <!-- //portfolio -->
-    <section class="plans">s</section>
-    <section class="contact">s</section>
+
+    <script>
+
+    </script>
+
+    <section class="plans">
+      <div class="inner">
+        <strong>I'll do it</strong>
+        <div class="library_wrap">
+          <div class="library_box">
+            <div class="img_box">
+              <img src="imges/react.png" alt="">
+            </div>
+            <div class="text_box">
+              <h2>
+                REACT<br>
+              </h2>
+            </div>
+          </div>
+          
+          <div class="library_box">
+            <div class="img_box">
+              <img src="imges/vuejs.png" alt="">
+            </div>
+            <div class="text_box">
+              <h2>
+                Vue.js<br>
+              </h2>
+            </div>
+          </div>
+          
+          <div class="library_box">
+            <div class="img_box">
+              <img src="imges/nextjs.png" alt="">
+            </div>
+            <div class="text_box">
+              <h2>
+                Next.js<br>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <p>
+          Javascript, J-querry는 계속 공부 중이며, 어느 정도 수준에 도달하면 React, Vue.js 등의 여러 가지의 라이브러리 또한 다뤄보고 싶습니다.
+          뿐만 아니라 끊임없이 공부하고 발전하여 나중에는 제가 가진 기술들을 남들에게 알려주고 싶습니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact">
+
+      <div class="inner">
+        <div class="contact_item">
+          <span></span>
+          <div class="content">
+            <img src="imges/call.jpg" alt="">
+            <p>
+              <span>phone :<br> 010 -2989 - 3566</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact_item">
+          <span></span>
+          <div class="content">
+            <img src="imges/kakakaka.jpg" alt="">
+            <p>
+              <span>ID :<br> skyhn0207</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact_item">
+          <span></span>
+          <div class="content">
+            <img src="imges/naver.png" alt="">
+            <p>
+              <span>E-mail :<br> skyhn0207@naver.com</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
 
@@ -530,6 +721,27 @@
     plus.onclick = function(){
       portfolio_menu.classList.toggle('active')
     }
+
+  </script>
+  <!-- swiper -->
+  <script>
+    var swiper = new Swiper(".mobile", {
+      effect: "coverflow",
+      loop: true,
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
   </script>
 </body>
 </html>
